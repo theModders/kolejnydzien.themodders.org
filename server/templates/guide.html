@@ -1,0 +1,37 @@
+{% include header.html %}
+<script src="/scripts/guide-menu.js"></script>
+<main class="clf guide-page")">
+	<div class="row">
+		<nav class="guide-menu-wrapper col s-100 m-100 l-30 xl-30">
+			{% for single in site.guide %}
+				<script>
+					addOption("{{ single.header }}", "{{ single.url }}");
+				</script>
+			{% endfor %}
+			<script>
+				if(mobile)
+					writeMobileMenu();
+				else
+					writeLargeMenu();
+			</script>
+		</nav>
+		<article class="content col s-100 m-100 l-70 xl-70">
+			<div class="content guide col s-100 m-100 l-60 xl-60">
+				<h1>{{ page.header }}</h1>
+				{% if page.collection != 'guide' or page.header == 'Inne' %}
+					{{ content }}
+				{% else %}
+					<section>
+						<p><span>Zleceniodawca:</span></p>
+						<p>{{ page.giver }}</p>
+					</section>
+					<section>
+						<p><span>Instrukcja:</span></p>
+						{{ content }}
+					</section>
+				{% endif %}					
+			</div>
+		</article>
+	</div>
+</main>
+{% include footer.html %}

@@ -1,0 +1,22 @@
+{% include header.html %}
+<script src="/scripts/gallery.js"></script>
+<main class="clf">
+	<article class="row">
+		<div class="content col s-100 m-100 l-33 xl-40">
+			<h1>{{ page.header }}</h1>
+			{% for item in site.data.screenshots %}
+				<script> addImage('{{ item.link }}'); </script>
+			{% endfor %}
+			<section class= "gallery row">
+				<script>
+					initGallery(mobile);
+				</script>
+			</section>
+		</div>
+		<script>
+			if(!mobile)
+				writeDisplay();
+		</script>
+	</article>
+</main>	
+{% include footer.html %}

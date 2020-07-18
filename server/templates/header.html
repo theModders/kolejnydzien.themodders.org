@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{{ page.title }}</title>
+		<meta name="description" content="">
+		
+		<link rel="stylesheet" href="/style/jantar-min.css">
+		<link rel="stylesheet" href="/style/style.css">
+		
+		<script src="/scripts/scripts.js"></script>
+		
+		<link rel="icon" href="https://dl.dropboxusercontent.com/s/g4t7nq18w85uiyt/ico.png" type="image/x-icon">
+	</head>
+	<body>
+		<script> let mobile = isMobile(); </script>
+		<div class="container">
+			<header class="row">
+				<div class="col s-100 m-70 l-30 xl-30">
+					<a href="/"><img src="https://dl.dropboxusercontent.com/s/iobtfi2r4tqv4d9/KD_NGL.png"/></a>
+				</div>
+				<div id="mobile-button-wrapper" class="s m only col s-100 m-30">
+					<a id="mobile-menu-button" class="s m only" onClick="showMenu()">
+						<span class="hamburger">
+							<span class = hamburger-layer></span>
+							<span class = hamburger-layer></span>
+							<span class = hamburger-layer></span>
+						</span>
+					</a>
+				</div>
+				<nav class="main-menu-wrapper col s-100 m-100 l-70 xl-70">
+					<ul id ="main-menu" class="menu">						
+						{% for item in site.data.main_menu %}
+							<li>
+								<a target="{{ item.target }}" href="{{ item.link }}">
+									{{ item.name }}
+									<script> menuItems++; </script>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</nav>
+			</header>

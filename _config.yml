@@ -1,0 +1,21 @@
+title: Kolejny Dzień
+description: Niewielka modyfikacja do Gothic II, na poprawę humoru.
+layouts_dir: ./server/templates
+includes_dir: ./server/templates
+data_dir: ./data
+permalink: :title/
+collections:
+  guide:
+    output: true
+    permalink: /poradnik/:title/
+defaults:
+  -
+    scope:
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      type: "guide"
+    values:
+      layout: "guide"

@@ -1,0 +1,15 @@
+- name: O projekcie
+  link: /o-projekcie
+  target: _self
+- name: Pobierz
+  link: /pobierz
+  target: _self
+- name: Galeria
+  link: /galeria
+  target: _self
+- name: Poradnik
+  link: /poradnik
+  target: _self
+- name: Skomentuj
+  link: https://themodders.org/index.php?topic=28136.0
+  target: _blank

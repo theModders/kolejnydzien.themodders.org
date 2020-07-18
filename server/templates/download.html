@@ -1,0 +1,19 @@
+{% include header.html %}
+	<main class="clf" style="background-image: url({{ page.background }})">
+		<article class="row">
+			<div class="content col s-100 m-100 l-50 xl-50">				
+				<section>
+					<h1>{{ page.header }}</h1>
+					{{ content }}
+				</section>
+				<section class="download-links-wrapper">
+					{% for item in site.data.download_links %}
+							<a target="_blank" class="download-link" href="{{ item.link }}">
+								{{ item.name }}
+							</a>
+					{% endfor %}
+				</section>
+			</div>
+		</article>
+	</main>
+{% include footer.html %}
